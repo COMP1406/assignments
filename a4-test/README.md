@@ -1,6 +1,6 @@
 # a4-test
 
-## `TestCard` is a simple program that generates a deck of cards, shuffles the deck and then sort it. This program should __compile__ and __run__ if you have implemented your `StandardCard` and `Card` classes properly.
+## TestCard is a simple program that generates a deck of cards, shuffles the deck and then sort it. This program should __compile__ and __run__ if you have implemented your `StandardCard` and `Card` classes properly.
 
 ## Bubbles
 You can visualize your Bubble classes with the `Bubbles` processing sketch provided (`Bubbles.zip`). You can either do this in the lab computers or at home. At home, you will need to install Processing 3 
