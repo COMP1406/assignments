@@ -1,6 +1,6 @@
 public abstract class Bubble{
   /* maximum speed */
-	public static double MAX_SPEED = 2;
+	public static double MAX_SPEED = 5;
 	
 	/* colours avaialable */
 	public static final String[] COLOURS = {"Red", "Blue", "Green"};
@@ -10,20 +10,20 @@ public abstract class Bubble{
  	protected int    health;          // health of bubble
 	protected int    treasure;        // treasure of bubble
 	protected String colour;          // colour of bubble
-	protected double radius;          // size of bubble
-	protected int    x, y;            // position of bubble
-	protected double speedX, speedY;  // speed of bubble
+	protected double  radius;          // size of bubble
+	protected double  x, y;            // position of bubble
+	protected double  speedX, speedY;  // speed of bubble
 
 	protected int     count = 0;       // internal counter 
   
 	
 	/* constructor */
-	public Bubble(int x, int y, double radius){
+	public Bubble(double x, double y, double radius){
 		this.x = x;
 		this.y = y;
 		this.radius = radius;
 		this.health = this.health = 0;
-		this.speedX = this.speedY = 0.0;
+		this.speedX = this.speedY = 0.0f;
 	}
 	
 	/* getters */
@@ -31,11 +31,11 @@ public abstract class Bubble{
 	public int    getHealth(){ return this.health; }
 	public int    getTreasure(){ return this.treasure; }
 	public String getColour(){ return this.colour; }
-	public double getRadius(){ return this.radius; }
-	public int    getX(){ return this.x; }
-	public int    getY(){ return this.y; }
-	public double getSpeedX(){ return this.speedX; }
-	public double getSpeedY(){ return this.speedY; }
+	public double  getRadius(){ return this.radius; }
+	public double  getX(){ return this.x; }
+	public double  getY(){ return this.y; }
+	public double  getSpeedX(){ return this.speedX; }
+	public double  getSpeedY(){ return this.speedY; }
 	
 	/* setters */
 	public void setName(String name){ this.name = name; }
@@ -43,8 +43,8 @@ public abstract class Bubble{
 	public void setTreasure(int treasure){ this.treasure = treasure; }
 	public void setColour(String colour){ this.colour = colour; }
 	public void setRadius(double radius){ this.radius = radius; }
-	public void setX(int x){ this.x = x; }
-	public void setY(int y){ this.y = y; }
+	public void setX(double x){ this.x = x; }
+	public void setY(double y){ this.y = y; }
 	public void setSpeedX(double dx){ this.speedX = dx; }
 	public void setSpeedY(double dy){ this.speedY = dy; }
 	
@@ -54,7 +54,7 @@ public abstract class Bubble{
 	public void capSpeed(double max){
 		double s2 = speedX*speedX + speedY*speedY; // speed squared
 		if( s2 > max*max ){
-			double s = Math.sqrt(Math.sqrt(s2));
+			double s = (double)Math.sqrt(s2);
 			speedX = speedX/s*max;
 			speedY = speedY/s*max;
 		}
@@ -68,7 +68,7 @@ public abstract class Bubble{
 	public boolean collidesWith(Bubble other){
 		// distance between centres of bubbles squared
 		double distance2 = (x-other.x)*(x-other.x) + (y-other.y)*(y-other.y);
-		return distance2 <= radius + other.radius;
+		return Math.sqrt(distance2) <= radius + other.radius;
 	}
 
 	/** checks if current bubble has collided with the border of its world.
@@ -85,7 +85,7 @@ public abstract class Bubble{
 	 * @return true if this has hit the wall, false otherwise	 
 	 */
 	public boolean hitsWall(int x1, int y1, int x2, int y2){
-		return y-radius <= y1 || y+radius >= y2 || x-radius <= x1 || x+radius >= y2;
+		return y-radius <= y1 || y+radius >= y2 || x-radius <= x1 || x+radius >= x2;
 	}	
 		
 
@@ -97,12 +97,16 @@ public abstract class Bubble{
 	 * @param x2 is x-coordinate of lower right corner boundary
 	 * @param y2 is y-coordinate of lower right corner boundary 
    */	 
-	public abstract void applyLogic(Bubble[] bubbles, int x1, int y1, int x2, int y2);
-	
+   /*	
+     REMOVE THIS METHOD
+     public abstract void applyLogic(Bubble[] bubbles, int x1, int y1, int x2, int y2);
+	*/
+
+
 	/** updates current bubble object */
-	public void update(){
+	public void update(Bubble[] bubbles, int x1, int y1, int x2, int y2){
 		this.capSpeed(MAX_SPEED);
-		this.x = (int) (this.x + this.speedX);
-		this.y = (int) (this.y + this.speedY);
+		this.x = (this.x + this.speedX);
+		this.y = (this.y + this.speedY);
 	}
 }
