@@ -1,5 +1,6 @@
 # Assignment 4 (updated)
 (Due Tuesday, August 1, at 5:30 pm)
+Be sure to submit your code on cuLearn (not github)
 ---
 
 ---
