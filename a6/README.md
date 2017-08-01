@@ -1,35 +1,26 @@
 # Assignment 6
-(Due Thursday August 3 at 6:05pm in class)  
+(Due Thursday August 10 at 5:30pm on cuLearn)
 ---
 
-
 ---
+Create a cheat sheet for the midterm. You will __not__ be using this cheat sheet during the exam but writing it will help you prepare for it.
 
-## 1. Balanced Parentheses [10 marks]
+Submit one sheet of paper. You can use both sides if you wish but one is sufficient.  Your cheat sheet can contain anything that you feel would help you in the test. This might be definitions, summaries of concepts, example and explanations of code, etc.   
 
-In this problem you will use a Stack to check for balanced parentheses  and brackets. 
+If you do not know what to put on your cheat sheet, some ideas might be
 
-A string that has balanced parentheses and brackets will be said to be __balanced__. Any character that is NOT one of `(`, `)`, `{`, `}`, `[` or `]` are not important when deciding if a string is balanced and can be ignored. 
+- summarize the lecture notes  
+- answer the midterm practice problems  
+- summarize every Java keyword we have seen so far
 
-We will define __balanced__ as follows. A string `str` is balanced
-1. if `str` does not contain a parenthesis or bracket symbol, or
-2. if `str` consists of a balanced string surrounded by opening and closing parentheses or matching brackets. That is, `str` is `(b)`, or `[b]}` or `{b}`, where `b` is any balanced string, or
-3. if `str` is the concatenation of any two balanced strings. That is, 
-`str = b+c`, where `b` and `c` are any balanced strings.
 
-Complete the `Balanced` class that has two static methods `isBalanced(String)` and `numberOfBalancedStrings(String[])`.
-  
+You will receive full marks if you put in a reasonable effort. Filling one page with a summary of course material will be considered a reasonable effort.
 
-Your `isBalanced()` method must use the `java.util.Stack` class (in a way that solves the problem) to receive any grades
-for this problem.  
+Your cheat sheet can be handwritten or computer generated. I strongly suggest to hand write it if you are able.
 
-[http://docs.oracle.com/javase/8/docs/api/java/util/Stack.html](http://docs.oracle.com/javase/8/docs/api/java/util/Stack.html)
+Note: Hand in your assignment at the start of class on Thursday. The test will start 1-2 minutes after the start of class, so be sure to arrive on time (or 5 minutes early).
 
-#### examples
-
-The following strings have balanced parentheses
-
-- `{}`, `()`, `()()`
+Note: If you have another arrangement for writing the midterm with PMC, you should drop off the assignment at the main office of SCS (School of Computer Science) on the afternoon of the midterm some time before you write the test. `()`, `()()`
 - `cat`, `c(at)`, `(hello)(kitty)`
 - `if( ((x-y) < 4) || (x > 12))`
 - `()(((s)))()()()()(x()((y))(x))()(ccccc(w))ssss()`
