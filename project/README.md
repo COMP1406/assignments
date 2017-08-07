@@ -116,6 +116,7 @@ Individual team members can obtain extra credit (to offset a poor mark in a prev
 - Create a tournament with many of your different players
 - Create cheater players that work together in a 4 player game
 - Create a `Game` class that oversees that a game is played correctly (ensures players do not create new cards, remove cards, play valid moves, etc)
+- Add file i/o to load players (and their win/los history), play matches and then update the saved data
 - Add graphics to the game
 - ...
 
